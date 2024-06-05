@@ -24,10 +24,10 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-import { Transaction } from "@/types.ts";
-import {useTransactions} from "@/api.ts";
+import { Transaction } from "@/types";
+import {useTransactions} from "@/api/hooks";
 
-export const columns: ColumnDef<Transaction>[] = [
+const columns: ColumnDef<Transaction>[] = [
   {
     accessorKey: "status",
     header: "Status",

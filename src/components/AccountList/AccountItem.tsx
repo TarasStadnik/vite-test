@@ -1,11 +1,11 @@
-import {Account} from "@/types.ts";
+import {Account} from "@/types";
 import React, {useEffect, useState} from "react";
-import {useDeleteAccount} from "@/api.ts";
-import {Button, Card, Dialog} from "@/components/ui";
-import {CardContent, CardDescription, CardTitle} from "@/components/ui/card.tsx";
-import {DialogContent, DialogDescription, DialogHeader, DialogTitle} from "@/components/ui/dialog.tsx";
+import {useDeleteAccount} from "@/api/hooks";
+import {Button} from "@/components/ui/button";
+import {Card, CardContent, CardDescription, CardTitle} from "@/components/ui/card";
+import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from "@/components/ui/dialog";
 import TransferFundsForm from "@/components/TransferFundsForm";
-import {Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger} from "@/components/ui/menubar.tsx";
+import {Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarTrigger} from "@/components/ui/menubar";
 import {Menu} from "lucide-react";
 import {
   AlertDialog, AlertDialogAction, AlertDialogCancel,
@@ -13,7 +13,7 @@ import {
   AlertDialogDescription, AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle
-} from "@/components/ui/alert-dialog.tsx";
+} from "@/components/ui/alert-dialog";
 
 type Props = {
   account: Account

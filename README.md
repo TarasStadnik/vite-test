@@ -1,31 +1,91 @@
-# React + TypeScript + Vite
+# Test Bank Accounts Management Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This application is designed to manage bank accounts, allowing users to create, edit, search, delete accounts, and perform fund transfers between them. It is built with React and TypeScript, featuring a mocked backend for local development.
 
-## Expanding the ESLint configuration
+## File Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```plaintext
+src/
+│
+├── __mocks__         # Mocks for tests
+│
+├── __tests__         # Unit tests
+│
+├── api/              # API related files
+│   ├── hooks/        # Hooks for tanstack/query
+│   └── mockBackend.ts# Mocked backend
+│
+├── assets/           # Static assets (images, fonts, etc.)
+│
+├── components/       # React components
+│   ├── ui/           # shadcn UI components
+│   └── [other components]
+│
+├── types/            # TypeScript types
+│   └── index.ts      # Types file
+│
+└── main.tsx         # Main entry point
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-# vite-test
+## Scripts
+
+- **dev**: Starts the development server using Vite.
+- **build**: Compiles TypeScript and builds the project using Vite.
+- **lint**: Runs ESLint with specified options to lint the codebase.
+- **preview**: Previews the production build using Vite.
+- **test**: Runs unit tests using Jest.
+
+## Development
+
+To start the development server, run:
+
+```bash
+npm run dev
+```
+
+## Building
+
+To build the project for production, run:
+
+```bash
+npm run build
+```
+
+## Linting
+
+To lint the codebase, run:
+
+```bash
+npm run lint
+```
+
+## Previewing
+
+To preview the production build, run:
+
+```bash
+npm run preview
+```
+
+## Testing
+
+To run the unit tests, run:
+
+```bash
+npm run test
+```
+
+## File Descriptions
+
+- `src/__mocks__`: Contains mock data and functions for testing purposes.
+- `src/__tests__`: Contains unit test files.
+- `src/api/hooks`: Contains hooks for API interactions using TanStack Query.
+- `src/api/mockBackend.ts`: Contains the mocked backend.
+- `src/assets`: Contains static assets such as images and fonts.
+- `src/components`: Contains React components.
+    - `src/components/ui`: Contains shadcn UI components.
+- `src/types/index.ts`: Contains TypeScript type definitions.
+- `src/main.tsx`: The main entry point for the application.

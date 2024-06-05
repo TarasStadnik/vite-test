@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {Search} from "lucide-react";
 import Logo from "@/assets/react.svg";
 import {Input} from "@/components/ui/input";
-import {useSearchAccounts} from "@/api.ts";
-import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from "@/components/ui/dialog.tsx";
+import {useSearchAccounts} from "@/api/hooks";
+import {Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle} from "@/components/ui/dialog";
 import TransferFundsForm from "@/components/TransferFundsForm";
 
 const Header:React.FC = () => {

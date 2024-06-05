@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { Account, TransferFundsInput, TransferFundsResponse, Transaction } from './types';
+import { Account, TransferFundsInput, TransferFundsResponse, Transaction } from '../types';
 
 let accounts: Account[] = [
   { id: uuidv4(), ownerName: "Bank Main Account", currency: 'USD', balance: 1000 },

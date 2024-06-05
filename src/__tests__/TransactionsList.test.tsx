@@ -3,9 +3,9 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import TransactionsList from '@/components/TransactionsList';
-import { useTransactions } from '@/api';
+import { useTransactions } from '@/api/hooks';
 
-jest.mock('@/api', () => ({
+jest.mock('@/api/hooks.ts', () => ({
   useTransactions: jest.fn(),
 }));
 

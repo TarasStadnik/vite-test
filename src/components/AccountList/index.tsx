@@ -6,17 +6,16 @@ import {
   DialogDescription,
   DialogTitle,
 } from "@/components/ui/dialog";
-import CreateAccountForm from "@/components/CreateAccountForm";
+import { Card, CardContent } from "@/components/ui/card";
 import {Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious} from "@/components/ui/carousel";
 
-import { Plus } from "lucide-react"
+import { useAccounts } from "@/api/hooks";
+import { Account } from "@/types";
 
-import { useAccounts } from "@/api";
-import { Account } from "@/types.ts";
-import { Card } from "@/components/ui";
-import { CardContent } from "@/components/ui/card.tsx";
-
+import CreateAccountForm from "@/components/CreateAccountForm";
 import AccountItem from "@/components/AccountList/AccountItem";
+
+import { Plus } from "lucide-react"
 
 const AccountsList: React.FC = () => {
   const { data } = useAccounts();

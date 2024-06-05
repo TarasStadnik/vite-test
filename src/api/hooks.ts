@@ -10,8 +10,8 @@ import {
   getTransactions,
   getCurrencies,
   getExchangeRates
-} from './mockBackend';
-import { Account, TransferFundsInput, TransferFundsResponse, Transaction } from './types';
+} from './mockBackend.ts';
+import { Account, TransferFundsInput, TransferFundsResponse, Transaction } from '../types';
 
 
 export const useCurrencies = () => {

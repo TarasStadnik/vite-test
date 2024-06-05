@@ -2,9 +2,9 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AccountsList from '@/components/AccountList';
-import { useAccounts, useDeleteAccount, useCreateAccount, useCurrencies } from '@/api';
+import { useAccounts, useDeleteAccount, useCreateAccount, useCurrencies } from '@/api/hooks';
 
-jest.mock('@/api', () => ({
+jest.mock('@/api/hooks.ts', () => ({
   useAccounts: jest.fn(),
   useDeleteAccount: jest.fn(),
   useCreateAccount: jest.fn(),

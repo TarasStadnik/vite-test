@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
-import { useCreateAccount, useCurrencies } from '@/api';
+import { useCreateAccount, useCurrencies } from '@/api/hooks';
 import {
   Form,
   FormField,
@@ -11,7 +11,8 @@ import {
   FormControl,
   FormMessage,
 } from '@/components/ui/form';
-import { Button, Input} from '@/components/ui';
+import { Button} from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 
 const createAccountSchema = z.object({

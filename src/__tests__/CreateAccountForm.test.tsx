@@ -3,9 +3,9 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import CreateAccountForm from '@/components/CreateAccountForm';
-import { useCreateAccount, useCurrencies } from '@/api';
+import { useCreateAccount, useCurrencies } from '@/api/hooks';
 
-jest.mock('@/api', () => ({
+jest.mock('@/api/hooks.ts', () => ({
   useCreateAccount: jest.fn(),
   useCurrencies: jest.fn(),
 }));

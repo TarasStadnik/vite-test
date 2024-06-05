@@ -3,10 +3,10 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import TransferFundsForm from '@/components/TransferFundsForm';
-import { useAccounts, useExchangeRates, useTransactions, useTransferFunds } from '@/api';
+import { useAccounts, useExchangeRates, useTransactions, useTransferFunds } from '@/api/hooks';
 
 
-jest.mock('@/api', () => ({
+jest.mock('@/api/hooks.ts', () => ({
   useAccounts: jest.fn(),
   useExchangeRates: jest.fn(),
   useTransactions: jest.fn(),

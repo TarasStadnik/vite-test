@@ -2,7 +2,7 @@ import React, {useEffect, useMemo} from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import {useAccounts, useExchangeRates, useTransactions, useTransferFunds} from '@/api';
+import {useAccounts, useExchangeRates, useTransactions, useTransferFunds} from '@/api/hooks';
 import { Account } from '@/types';
 import {
   Form,
@@ -12,7 +12,8 @@ import {
   FormControl,
   FormMessage,
 } from '@/components/ui/form';
-import { Input, Button } from '@/components/ui';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from '@/components/ui/select';
 
 

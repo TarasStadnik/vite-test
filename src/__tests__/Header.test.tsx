@@ -2,11 +2,11 @@
 import React from 'react';
 import {render, screen, fireEvent, waitFor, within} from '@testing-library/react';
 import Header from '@/components/Header';
-import {useAccounts, useExchangeRates, useSearchAccounts, useTransactions, useTransferFunds} from '@/api';
+import {useAccounts, useExchangeRates, useSearchAccounts, useTransactions, useTransferFunds} from '@/api/hooks';
 
 jest.mock('@/assets/react.svg', () => 'mocked-svg');
 
-jest.mock('@/api', () => ({
+jest.mock('@/api/hooks.ts', () => ({
   useSearchAccounts: jest.fn(),
   useAccounts: jest.fn(),
   useTransactions: jest.fn(),
