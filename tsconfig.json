@@ -25,9 +25,9 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "types": ["node", "jest", "@testing-library/jest-dom"]
   },
   "esModuleInterop": true,
-  "types": ["node", "vite/client", "vitest/globals"],
   "references": [{ "path": "./tsconfig.node.json" }],
 }

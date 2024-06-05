@@ -1,3 +1,5 @@
+import '@testing-library/jest-dom';
+
 class MockPointerEvent extends Event {
   button: number;
   ctrlKey: boolean;
