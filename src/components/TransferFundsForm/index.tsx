@@ -47,7 +47,7 @@ const TransferFundsForm: React.FC<Props> = ({ fromAccountId, toAccountId, callba
       z.object({
         fromAccountId: z.string().min(1, "From account is required"),
         toAccountId: z.string().min(1, "To account is required"),
-        amount: z.number().positive("Amount must be positive"),
+        amount: z.number().min(0.01, "Amount must be positive"),
       }).refine((data) => data.fromAccountId !== data.toAccountId, {
         message: "From and to accounts cannot be the same",
         path: ["toAccountId"],
@@ -114,10 +114,10 @@ const TransferFundsForm: React.FC<Props> = ({ fromAccountId, toAccountId, callba
           name="fromAccountId"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>From Account</FormLabel>
+              <FormLabel htmlFor="fromAccountId">From Account</FormLabel>
               <FormControl>
                 <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isPending}>
-                  <SelectTrigger>
+                  <SelectTrigger id="fromAccountId" data-testid='from-account-select-trigger'>
                     <SelectValue placeholder="Select account" />
                   </SelectTrigger>
                   <SelectContent>
@@ -139,10 +139,10 @@ const TransferFundsForm: React.FC<Props> = ({ fromAccountId, toAccountId, callba
           name="toAccountId"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>To Account</FormLabel>
+              <FormLabel htmlFor="toAccountId">To Account</FormLabel>
               <FormControl>
                 <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isPending}>
-                  <SelectTrigger>
+                  <SelectTrigger id="toAccountId" data-testid='to-account-select-trigger'>
                     <SelectValue placeholder="Select account" />
                   </SelectTrigger>
                   <SelectContent>
@@ -164,9 +164,10 @@ const TransferFundsForm: React.FC<Props> = ({ fromAccountId, toAccountId, callba
           name="amount"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Amount</FormLabel>
+              <FormLabel htmlFor="amount">Amount</FormLabel>
               <FormControl>
                 <Input
+                  id="amount"
                   type="number"
                   step="0.01"
                   {...field}
@@ -187,7 +188,7 @@ const TransferFundsForm: React.FC<Props> = ({ fromAccountId, toAccountId, callba
           )}
         />
 
-        <Button className="mt-4 w-full" type="submit" disabled={isPending}>
+        <Button data-testid="transfer-button" className="mt-4 w-full" type="submit" disabled={isPending}>
           {isPending ? 'Transferring...' : 'Transfer'}
         </Button>
       </form>

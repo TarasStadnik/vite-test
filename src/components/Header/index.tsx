@@ -44,7 +44,7 @@ const Header:React.FC = () => {
                   }).format(account.balance)}
                 </div>
                 <Dialog open={isTransferDialogOpen} onOpenChange={setIsTransferDialogOpen}>
-                  <DialogContent>
+                  <DialogContent data-testid={`dialog-${account.id}`}>
                     <DialogHeader>
                       <DialogTitle>Transfer</DialogTitle>
                       <DialogDescription>

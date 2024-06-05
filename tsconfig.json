@@ -28,6 +28,6 @@
     }
   },
   "esModuleInterop": true,
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "types": ["node", "vite/client", "vitest/globals"],
+  "references": [{ "path": "./tsconfig.node.json" }],
 }
